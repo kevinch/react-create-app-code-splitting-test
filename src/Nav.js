@@ -13,9 +13,6 @@ function Nav() {
       <li>
         <Link to="/countries">Countries</Link>
       </li>
-      <li>
-        <Link to="/contact">Contact</Link>
-      </li>
     </ul>
   )
 }

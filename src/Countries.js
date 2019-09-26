@@ -1,5 +1,4 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
 import L from 'react-loadable'
 
 import MyLoadingComponent from './MyLoadingComponent'
@@ -9,31 +8,15 @@ const Country = L({
   loading: MyLoadingComponent
 })
 
-function Countries({ match }) {
+function Countries() {
+  const arr = [...Array(50).keys()].map(x => x + 1)
+
   return (
     <div>
-      <h2>Countries</h2>
-      <ul>
-        <li>
-          <Link to={`${match.url}/fr`}>FR</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/sp`}>SP</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/uk`}>UK</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/br`}>BR</Link>
-        </li>
-      </ul>
-
-      <Route path={`${match.path}/:countryId`} component={Country} />
-      <Route
-        exact
-        path={match.path}
-        render={() => <h3>Please select a copuntry.</h3>}
-      />
+      <h2>List</h2>
+      {arr.map((el, i) => (
+        <Country key={i} id={el} />
+      ))}
     </div>
   )
 }

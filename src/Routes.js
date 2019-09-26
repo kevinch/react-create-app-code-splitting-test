@@ -16,10 +16,6 @@ const Countries = L({
   loader: () => import('./Countries'),
   loading: MyLoadingComponent
 })
-const Contact = L({
-  loader: () => import('./Contact'),
-  loading: MyLoadingComponent
-})
 
 function Routes() {
   return (
@@ -27,7 +23,6 @@ function Routes() {
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/countries" component={Countries} />
-      <Route path="/contact" component={Contact} />
     </>
   )
 }
